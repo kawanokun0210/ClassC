@@ -10,33 +10,24 @@ namespace RobotTest
     {
         //フィールド
         protected string name = "";
-        protected bool powerStatus = false;
 
         //メソッド
-        //電源をONにする
-        public void PowerOn()
+        //コンストラクタ
+        public Robot(string name)
         {
-            powerStatus = true;
-            Console.WriteLine("{0}は、起動した！！", name);
+            this.name = name;
         }
-
-        //電源をOFFにする
-        public void PowerOff()
-        {
-            powerStatus = false;
-            Console.WriteLine("{0}は、停止した！！", name);
-        }
-
-        //名前を取得する
+        
+        //nameの値を返す
         public string GetName()
         {
             return name;
         }
 
-        //電源の状態を取得する
-        public bool GetPowerStatus()
+        //攻撃する
+        public virtual void Attack()
         {
-            return powerStatus;
+            Console.WriteLine("{0}は、攻撃した！", name);
         }
 
     }

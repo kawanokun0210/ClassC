@@ -13,22 +13,15 @@ namespace GundamTest
 
         //メソッド
         //コンストラクタ
-        public Gundam(string name)
+        public Gundam(string name) : base(name)
         {
             this.name = name;
         }
 
         //フィンファンネルを撃つ
-        public void FinFunnel()
+        public override void Attack()
         {
-            if (powerStatus)
-            {
-                Console.WriteLine("{0}は、フィンファンネルを発動した！", name);
-            }
-            else
-            {
-                Console.WriteLine("{0}は、電源OFFなので親父にぶたれた...", name);
-            }
+            Console.WriteLine("{0}は、フィンファンネルを発動した！", name);
         }
 
     }

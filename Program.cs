@@ -8,7 +8,7 @@ using PlayerTest;
 using FlyingRobotTest;
 using TankRobotTest;
 using System.Xml.Linq;
-using GundamTest;
+using RobotTest;
 
 namespace ClassC
 {
@@ -16,52 +16,17 @@ namespace ClassC
     {
         static void Main(string[] args)
         {
-            //空飛ぶロボをテストする
-            FlyingRobot[] flyingRobots = new FlyingRobot[5];
+            Robot robot = new Robot("ロボット");
+            Console.WriteLine("名前:{0}", robot.GetName());
+            robot.Attack();
 
-            //空飛ぶロボ5体分の実体を作る
-            for(int i = 0; i < flyingRobots.Length; i++) {
-                flyingRobots[i] = new FlyingRobot("空飛ぶロボNo." + i);
-                flyingRobots[i].PowerOn();
-            }
-          
-            foreach(FlyingRobot fly in flyingRobots)
-            {
-                fly.DropBomb();
-            }
+            FlyingRobot flyingRobot = new FlyingRobot("空飛ぶロボ");
+            Console.WriteLine("名前:{0}", flyingRobot.GetName());
+            flyingRobot.Attack();
 
-            Console.WriteLine("---------------------------");
-
-            //タンクロボをテストする
-            TankRobot[] tankRobots = new TankRobot[5];
-
-            for(int i = 0; i < tankRobots.Length; i++)
-            {
-                tankRobots[i] = new TankRobot("タンクNo." + i);
-                tankRobots[i].PowerOn();
-            }
-
-            foreach(TankRobot tank in tankRobots)
-            {
-                tank.ShootCannon();
-            }
-
-            Console.WriteLine("---------------------------");
-
-            //ニューガンダムをテストする
-            Gundam gundam = new Gundam("ニューガンダム");
-
-            Console.WriteLine("名前 : {0}", gundam.GetName());
-            Console.WriteLine("電源 : {0}", gundam.GetPowerStatus());
-
-            gundam.FinFunnel();
-
-            gundam.PowerOn();
-            gundam.FinFunnel();
-
-            gundam.PowerOff();
-
-            Console.WriteLine("---------------------------");
+            TankRobot tankRobot = new TankRobot("タンクロボ");
+            Console.WriteLine("名前:{0}", tankRobot.GetName());
+            tankRobot.Attack();
 
             //一時停止
             Console.ReadLine();

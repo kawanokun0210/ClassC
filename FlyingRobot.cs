@@ -14,22 +14,15 @@ namespace FlyingRobotTest
 
         //メソッド
         //コンストラクタ
-        public FlyingRobot(string name)
+        public FlyingRobot(string name) : base(name)
         {
             this.name = name;
         }
 
         //爆弾を落とす
-        public void DropBomb()
+        public virtual void Attack()
         {
-            if (powerStatus)
-            {
-                Console.WriteLine("{0}は、爆弾を落とした！！", name);
-            }
-            else
-            {
-                Console.WriteLine("{0}は、電源OFFなので爆弾投下は使えません...！！", name);
-            }
+            Console.WriteLine("{0}は、爆弾を落とした！！", name);
         }
 
     }
