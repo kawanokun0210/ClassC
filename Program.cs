@@ -16,27 +16,45 @@ namespace ClassC
     {
         static void Main(string[] args)
         {
-            //乱数発生器の生成
-            Random random = new Random(Environment.TickCount);
+            //Listコレクションnumbersを作成する
+            List<int> numbers = new List<int>();
 
-            //サイコロを3回振る
-            //1~6の範囲の乱数を発生させて表示する
-            for(int i = 0; i < 3; i++)
-            {
-                int r = random.Next(1, 6 + 1);
-                Console.WriteLine(r);
-            }
+            //numbersに3を追加して、中身を表示する
+            numbers.Add(3);
 
-            //実数の値も発生してみる
-            for(int i = 0; i < 3; i++)
+            foreach(int number in numbers)
             {
-                double r = random.NextDouble();
-                Console.WriteLine(r);
+                Console.WriteLine(number);
             }
+            Console.WriteLine("---");
 
             //一時停止
             Console.ReadLine();
 
+            //続いて7,2,1,5を追加して、中身を表示する
+            numbers.Add(7);
+            numbers.Add(2);
+            numbers.Add(1);
+            numbers.Add(5);
+
+            foreach(int number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+            Console.WriteLine("---");
+
+            //一時停止
+            Console.ReadLine();
+
+            //配列のように。添字を使って参照できる
+            for(int i = 0; i < numbers.Count; i++)
+            {
+                Console.WriteLine(numbers[i]);
+            }
+            Console.WriteLine("---");
+
+            //一時停止
+            Console.ReadLine();
         }
     }
 }
