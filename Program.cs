@@ -16,17 +16,23 @@ namespace ClassC
     {
         static void Main(string[] args)
         {
-            Robot robot = new Robot("ロボット");
-            Console.WriteLine("名前:{0}", robot.GetName());
-            robot.Attack();
+            //乱数発生器の生成
+            Random random = new Random(Environment.TickCount);
 
-            FlyingRobot flyingRobot = new FlyingRobot("空飛ぶロボ");
-            Console.WriteLine("名前:{0}", flyingRobot.GetName());
-            flyingRobot.Attack();
+            //サイコロを3回振る
+            //1~6の範囲の乱数を発生させて表示する
+            for(int i = 0; i < 3; i++)
+            {
+                int r = random.Next(1, 6 + 1);
+                Console.WriteLine(r);
+            }
 
-            TankRobot tankRobot = new TankRobot("タンクロボ");
-            Console.WriteLine("名前:{0}", tankRobot.GetName());
-            tankRobot.Attack();
+            //実数の値も発生してみる
+            for(int i = 0; i < 3; i++)
+            {
+                double r = random.NextDouble();
+                Console.WriteLine(r);
+            }
 
             //一時停止
             Console.ReadLine();
