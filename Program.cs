@@ -18,20 +18,20 @@ namespace ClassC
         {
             //乱数発生器の生成
             Random random = new Random(Environment.TickCount);
+            //Listコレクションnumbersを作成する
+            List<int> numbers = new List<int>();
 
-            //サイコロを3回振る
-            //1~6の範囲の乱数を発生させて表示する
-            for(int i = 0; i < 3; i++)
+            //サイコロを10回振る
+            //-5~5の範囲の乱数を発生させて表示する
+            for(int i = 0; i < 10; i++)
             {
-                int r = random.Next(1, 6 + 1);
-                Console.WriteLine(r);
+                numbers.Add(random.Next(-5, 5 + 1));
             }
 
-            //実数の値も発生してみる
-            for(int i = 0; i < 3; i++)
+            //全ての中身を確認
+            foreach(int number in numbers)
             {
-                double r = random.NextDouble();
-                Console.WriteLine(r);
+                Console.WriteLine(number);
             }
 
             //一時停止
