@@ -19,19 +19,32 @@ namespace ClassC
             //乱数発生器の生成
             Random random = new Random(Environment.TickCount);
             //Listコレクションnumbersを作成する
-            List<int> numbers = new List<int>();
+            List<Robot> robots = new List<Robot>();
+            //ランダムの数字を格納
+            int randomNum = 0;
 
-            //サイコロを10回振る
-            //-5~5の範囲の乱数を発生させて表示する
-            for(int i = 0; i < 10; i++)
+            //サイコロを15回振る
+            for(int i = 0; i < 15; i++)
             {
-                numbers.Add(random.Next(-5, 5 + 1));
+                //ランダムの数字を抽選する
+                randomNum = random.Next(0, 1 + 1);
+
+                //数字が0ならタンクロボを出す
+                if(randomNum == 0)
+                {
+                    robots.Add(new TankRobot("タンクロボ"));
+                }
+                else//0じゃなければ空飛ぶロボを出す
+                {
+                    robots.Add(new FlyingRobot("空飛ぶロボ"));
+                }
+
             }
 
             //全ての中身を確認
-            foreach(int number in numbers)
+            foreach(Robot robot in robots)
             {
-                Console.WriteLine(number);
+                robot.Attack();
             }
 
             //一時停止
