@@ -18,9 +18,9 @@ namespace ClassC
     {
         static void Main(string[] args)
         {
-            Item item = new Item("つるはし");
+            Player player = new Player(new Item("こん棒"));
 
-            item.Use();
+            player.UseItem();
 
             //一時停止
             Console.ReadLine();

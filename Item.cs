@@ -24,5 +24,10 @@ namespace ItemTest
             Console.WriteLine("{0}を使った", name);
         }
 
+        public string GetName()
+        {
+            return name;
+        }
+
     }
 }

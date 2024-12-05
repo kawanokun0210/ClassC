@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ItemTest;
 
 namespace PlayerTest
 {
@@ -12,12 +13,19 @@ namespace PlayerTest
         private string name;
         private int level;
 
+        private string item;
+
         //メソッド
         //コンストラクタ
         public Player(string name, int level)
         {
             this.name = name;
             this.level = level;
+        }
+
+        public Player(Item item)
+        {
+            this.item = item.GetName();
         }
 
         //攻撃する
@@ -44,6 +52,12 @@ namespace PlayerTest
         public int GetLevel()
         {
             return level;
+        }
+
+        //アイテムを使う
+        public void UseItem()
+        {
+            Console.WriteLine("{0}を使った", item);
         }
 
     }
