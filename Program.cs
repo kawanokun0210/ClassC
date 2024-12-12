@@ -11,6 +11,10 @@ using System.Xml.Linq;
 using RobotTest;
 using ItemTest;
 using System.ComponentModel;
+using ShapeTest;
+using CircleTest;
+using RectangleTest;
+using TriangleTest;
 
 namespace ClassC
 {
@@ -18,13 +22,19 @@ namespace ClassC
     {
         static void Main(string[] args)
         {
-            Player player = new Player();
+            List<Shape> shapes = new List<Shape>();
 
-            player.AddItem(new Item("つるはし"));
-            player.AddItem(new Item("巻き物"));
-            player.AddItem(new Item("ポーション"));
+            shapes.Add(new Circle(10));
+            shapes.Add(new Rectangle(5, 7));
+            shapes.Add(new Triangle(5, 7));
 
-            player.UseItems();
+            foreach (Shape shape in shapes)
+            {
+                //Drawメソッドのテスト
+                shape.Draw();
+                //Areaメソッドのテスト
+                Console.WriteLine("面積 : {0}", shape.Area());
+            }
 
             //一時停止
             Console.ReadLine();
