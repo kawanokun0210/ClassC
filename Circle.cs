@@ -12,6 +12,7 @@ namespace CircleTest
         //フィールド
         private float radius;
 
+        //コンストラクタ
         public Circle(float radius)
         {
             this.radius = radius;

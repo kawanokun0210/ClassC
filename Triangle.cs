@@ -15,6 +15,7 @@ namespace TriangleTest
         private float width;
         private float height;
 
+        //コンストラクタ
         public Triangle(float width, float height)
         {
             this.width = width;

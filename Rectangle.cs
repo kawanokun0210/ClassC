@@ -13,6 +13,7 @@ namespace RectangleTest
         private float width;
         private float height;
 
+        //コンストラクタ
         public Rectangle(float width,float height)
         {
             this.width = width;
