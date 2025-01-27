@@ -10,7 +10,7 @@ namespace SwitchTest
     internal class Switch
     {
         //フィールド
-        protected GameCard gamecard;
+        private GameCard gamecard;
 
         //メソッド
         public Switch()
