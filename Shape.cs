@@ -9,7 +9,7 @@ namespace ShapeTest
     internal class Shape
     {
         //フィールド
-        public float area;
+        protected float area;
 
         public float Area()
         {
