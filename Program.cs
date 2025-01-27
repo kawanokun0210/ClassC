@@ -11,10 +11,11 @@ using System.Xml.Linq;
 using RobotTest;
 using ItemTest;
 using System.ComponentModel;
-using ShapeTest;
-using CircleTest;
-using RectangleTest;
-using TriangleTest;
+using SwitchTest;
+using GameCardTest;
+using ShirenTest;
+using PikminTest;
+using SplatoonTest;
 
 namespace ClassC
 {
@@ -22,19 +23,22 @@ namespace ClassC
     {
         static void Main(string[] args)
         {
-            List<Shape> shapes = new List<Shape>();
+            Switch sw = new Switch();
+          
+            //ゲームをセットせずにプレイしてみる
+            sw.PlayGame();
 
-            shapes.Add(new Circle(10));
-            shapes.Add(new Rectangle(5, 7));
-            shapes.Add(new Triangle(5, 7));
+            //風来の試練をセットしてプレイしてみる
+            sw.SetGameCard(new Shiren());
+            sw.PlayGame();
 
-            foreach (Shape shape in shapes)
-            {
-                //Drawメソッドのテスト
-                shape.Draw();
-                //Areaメソッドのテスト
-                Console.WriteLine("面積 : {0}", shape.Area());
-            }
+            //ピクミンをセットしてプレイしてみる
+            sw.SetGameCard(new Pikmin());
+            sw.PlayGame();
+
+            //スプラトゥーンをセットしてプレイしてみる
+            sw.SetGameCard(new Splatoon());
+            sw.PlayGame();
 
             //一時停止
             Console.ReadLine();
