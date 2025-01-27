@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="Circle.cs" />
     <Compile Include="Dog.cs" />
+    <Compile Include="FinalFantasy.cs" />
     <Compile Include="FlyingRobot.cs" />
+    <Compile Include="GameApplication.cs" />
     <Compile Include="GameCard.cs" />
     <Compile Include="Gundam.cs" />
     <Compile Include="Item.cs" />
